@@ -1,0 +1,13 @@
+.home-title-category {
+  margin: 20px;
+}
+.home-container-title {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+}
+.home-view-more {
+  font-weight: 800;
+  cursor: pointer;
+}
