@@ -1,0 +1,27 @@
+.container-questions-item {
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.card-questions-item {
+  max-width: 920px;
+}
+.question--item {
+  margin: 10px;
+}
+.icon-questions-item {
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+}
+.answer-questions-item {
+  display: flex;
+  margin: 10px 30px;
+  border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+.answer-questions-item div,
+.question--item div {
+  margin: 10px;
+}

@@ -1,0 +1,83 @@
+.container-details-item {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-details-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail-details-item {
+  width: 50px;
+  box-sizing: border-box;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.thumbnail-details-item img {
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.main-image-details-item {
+  width: 600px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.main-image-details-item img {
+  width: 100%;
+  height: auto;
+}
+
+.product-info-details-item {
+  width: 700px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.product-info-details-item p {
+  margin: 10px;
+}
+.price-details-item {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.description-details-item {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.original-price-details-item {
+  text-decoration: line-through;
+  font-size: 20px;
+  color: rgb(68, 68, 68);
+}
+.price-details-item {
+  font-size: 36px;
+}
+.portion-details-item {
+}
+.stock-full-details-item {
+  margin: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.icon-full-details-item {
+  color: green;
+  font-size: 26px;
+}
+.frete-details-item {
+  display: flex;
+  flex-direction: column;
+}
+.frete-details-item span {
+  margin: 3px 0;
+}
+.calculate-shipping-details-item {
+  color: rgba(0, 26, 255, 0.705);
+  cursor: pointer;
+}
