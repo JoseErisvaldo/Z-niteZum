@@ -46,9 +46,8 @@ export default function CompoDetailesItem() {
         </div>
         <div className="product-info-details-item">
           <h1>{detailsItemBd.title}</h1>
-          <p className="price-details-item">{/* Adicione a lógica de preço aqui */}</p>
-          <p className="description-details-item">Suporte para notebook universal. Ideal para manter seu laptop elevado e facilitar a ventilação.</p>
-          <p className="original-price-details-item">R$ {detailsItemBd.original_price}</p>
+          <p className="price-details-item"></p>
+           <p className="original-price-details-item">R$ {detailsItemBd.original_price}</p>
           <p className="price-details-item">R$ {detailsItemBd.price}</p>
           <p className="portion-details-item">ou 12x {(detailsItemBd.original_price / 12).toFixed(2)}</p>
           <h2 className="stock-full-details-item">Estoque FULL <span className="icon-full-details-item"><FaCheck/></span></h2>
