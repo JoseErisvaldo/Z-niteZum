@@ -14,6 +14,8 @@ export default function Home () {
   const [queryAndroidBd,setQueryAndroidBd] = useState([])
   const [androidBd, setAndroidBd] = useState([])
 
+  const [perfumeBd, setPerfumeBd] = useState([])
+  const [queryPerfumeBd, setQueryPerfumeBd]  = useState([])
 
   async function listCategoryTv () {
     const res = await api.get('/sites/MLB/search?q=TV')
@@ -32,23 +34,21 @@ export default function Home () {
     setLoading(false)
   }
 
-  async function listCategory () {
-    const res = await api.get('/sites/MLB/search?q=Celulares%20Android')
+  async function listCategoryPerfume () {
+    const res = await api.get('/sites/MLB/search?q=Perfumes')
+    setQueryPerfumeBd(res.data.query)
     console.log(res.data.query.results)
-    setQueryAndroidBd(res.data.query)
      const slicedTvResults = res.data.results.slice(0, 8);
-    setAndroidBd(slicedTvResults)
+    setPerfumeBd(slicedTvResults)
+    console.log(slicedTvResults)
     setLoading(false)
   }
-
-
-
-
 
 
   useEffect(() => {
     listCategoryTv ()
     listCategoryAndroid()
+    listCategoryPerfume ()
   },[])
 
   if(loading) {
@@ -74,8 +74,21 @@ export default function Home () {
             <div className="home-view-more">Ver mais</div>
           </Link>
         </div>
+
         <CompoListProducts list={androidBd}/>
       </div>
+
+      <div>
+        <div className="home-container-title">
+           <h2 className="home-title-category">{queryPerfumeBd}</h2>
+           <Link to={queryAndroidBd} className="link-black">
+            <div className="home-view-more">Ver mais</div>
+          </Link>
+        </div>
+
+        <CompoListProducts list={perfumeBd}/>
+      </div>
+      
     </div>
   )
 }
