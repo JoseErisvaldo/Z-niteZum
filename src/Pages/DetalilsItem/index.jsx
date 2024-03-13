@@ -1,12 +1,16 @@
-import { useParams } from "react-router-dom"
+
 import CompoDetailesItem from "../../Components/CompoDetailsItem"
 import ItemQuestions from "../../Components/CompoDetailsItem/ItemQuestions"
+import NavBar from "../../Components/NavBar"
+
 
 export default function DetailesItem () {
+ 
   return (
     <div>
       <div>
-        <CompoDetailesItem/>
+        <NavBar/>
+        <CompoDetailesItem />
         <ItemQuestions/>
       </div>
       
