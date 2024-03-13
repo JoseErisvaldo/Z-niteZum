@@ -4,6 +4,7 @@
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .card-details-item {
   display: flex;
@@ -80,4 +81,16 @@
 .calculate-shipping-details-item {
   color: rgba(0, 26, 255, 0.705);
   cursor: pointer;
+}
+
+@media (max-width: 730px) {
+  .container-details-item {
+    display: block;
+  }
+  .product-info-details-item {
+    width: 100%;
+  }
+  .thumbnail-details-item {
+    display: none;
+  }
 }

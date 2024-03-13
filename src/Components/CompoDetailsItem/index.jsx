@@ -16,7 +16,6 @@ export default function CompoDetailesItem() {
     try {
       const response = await api.get(`/items/${id}`)
       setDetailsItemBd(response.data)
-      console.log(response.data)
       if (response.data && response.data.pictures) {
         const img = response.data.pictures
         const slice = img.slice(0,6)
@@ -45,7 +44,7 @@ export default function CompoDetailesItem() {
           </div>
         </div>
         <div className="product-info-details-item">
-          <h1>{detailsItemBd.title}</h1>
+          <h3>{detailsItemBd.title}</h3>
           <p className="price-details-item"></p>
            <p className="original-price-details-item">R$ {detailsItemBd.original_price}</p>
           <p className="price-details-item">R$ {detailsItemBd.price}</p>
