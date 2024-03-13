@@ -8,9 +8,23 @@
 .container-emphasis-home::-webkit-scrollbar {
   height: 0;
 }
+.card-emphasis-title {
+  color: rgb(255, 255, 255);
+  font-size: 70px;
+}
 .card-emphasis-home img {
   width: 320px;
   height: 100%;
-  margin: 30px;
+  margin: 50px;
   border-radius: 50px;
+}
+.container-emphasis-price {
+  text-align: center;
+}
+.card-emphasis-price {
+  text-decoration: line-through;
+}
+.card-emphasis-discount {
+  font-size: 30px;
+  margin-bottom: 20px;
 }
