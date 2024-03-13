@@ -1,6 +1,6 @@
 import BtnReturn from '../Btns/BtnReturn'
 import './style.css'
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export default function CompoCategory ({list}) {
 
@@ -9,7 +9,7 @@ export default function CompoCategory ({list}) {
       <BtnReturn/>
       <div className='dados-list-category' >
         <div className='filter-list-category'>
-          filtro
+          {/* Filtro */}
         </div>
         <div className='container-card-list-category'>
           {list.map((item) => (

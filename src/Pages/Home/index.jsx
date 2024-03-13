@@ -18,6 +18,9 @@ export default function Home () {
   const [perfumeBd, setPerfumeBd] = useState([])
   const [queryPerfumeBd, setQueryPerfumeBd]  = useState([])
 
+  const [queryFutebolBd, setQueryFutebolBd] = useState([])
+  const [futebolBd, setFutebolBd] = useState([])
+
   async function listCategoryTv () {
     const res = await api.get('/sites/MLB/search?q=TV')
     setQueryTvBd(res.data.query)
@@ -43,11 +46,21 @@ export default function Home () {
     setLoading(false)
   }
 
+    async function listCategoryFutebol () {
+    const res = await api.get('/sites/MLB/search?q=Futebol')
+    setQueryFutebolBd(res.data.query)
+     const slicedTvResults = res.data.results.slice(0, 8);
+    setFutebolBd(slicedTvResults)
+    setLoading(false)
+  }
+  
+
 
   useEffect(() => {
     listCategoryTv ()
     listCategoryAndroid()
     listCategoryPerfume ()
+    listCategoryFutebol ()
   },[])
 
   if(loading) {
@@ -87,6 +100,17 @@ export default function Home () {
         </div>
 
         <CompoListProducts list={perfumeBd}/>
+      </div>
+
+      <div>
+        <div className="home-container-title">
+           <h2 className="home-title-category">{queryFutebolBd}</h2>
+           <Link to={`categoria/${queryFutebolBd}`} className="link-black">
+            <div className="home-view-more">Ver mais</div>
+          </Link>
+        </div>
+
+        <CompoListProducts list={futebolBd}/>
       </div>
       
     </div>
