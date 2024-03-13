@@ -5,6 +5,7 @@ import api from "../../Services";
 import './style.css'
 import { Link } from "react-router-dom";
 import LoadingListProducts from "../../Components/CompoListProducts/LoadingListProducts";
+import CompoEmphasis from "../../Components/CompoEmphasis";
 
 export default function Home () {
   const [tvBd, setTvBd] = useState([])
@@ -27,7 +28,7 @@ export default function Home () {
 
    async function listCategoryAndroid () {
     const res = await api.get('/sites/MLB/search?q=Celulares')
-    console.log(res.data.query.results)
+
     setQueryAndroidBd(res.data.query)
      const slicedTvResults = res.data.results.slice(0, 8);
     setAndroidBd(slicedTvResults)
@@ -37,10 +38,8 @@ export default function Home () {
   async function listCategoryPerfume () {
     const res = await api.get('/sites/MLB/search?q=Perfumes')
     setQueryPerfumeBd(res.data.query)
-    console.log(res.data.query.results)
      const slicedTvResults = res.data.results.slice(0, 8);
     setPerfumeBd(slicedTvResults)
-    console.log(slicedTvResults)
     setLoading(false)
   }
 
@@ -58,10 +57,11 @@ export default function Home () {
   return(
     <div className="home">
       <NavBar/>
+      <CompoEmphasis/>
       <div>
         <div className="home-container-title">
            <h2 className="home-title-category">{queryTvBd}</h2>
-           <Link to={queryTvBd} className="link-black">
+           <Link to={`categoria/${queryTvBd}`} className="link-black">
             <div className="home-view-more">Ver mais</div>
           </Link>
         </div>
@@ -70,7 +70,7 @@ export default function Home () {
       <div>
         <div className="home-container-title">
            <h2 className="home-title-category">{queryAndroidBd}</h2>
-           <Link to={queryAndroidBd} className="link-black">
+           <Link to={`categoria/${queryAndroidBd}`} className="link-black">
             <div className="home-view-more">Ver mais</div>
           </Link>
         </div>
@@ -81,7 +81,7 @@ export default function Home () {
       <div>
         <div className="home-container-title">
            <h2 className="home-title-category">{queryPerfumeBd}</h2>
-           <Link to={queryAndroidBd} className="link-black">
+           <Link to={`categoria/${queryPerfumeBd}`} className="link-black">
             <div className="home-view-more">Ver mais</div>
           </Link>
         </div>

@@ -1,0 +1,16 @@
+.container-emphasis-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: scroll;
+  background-color: rgb(165, 165, 165);
+}
+.container-emphasis-home::-webkit-scrollbar {
+  height: 0;
+}
+.card-emphasis-home img {
+  width: 320px;
+  height: 100%;
+  margin: 30px;
+  border-radius: 50px;
+}
