@@ -12,13 +12,21 @@
   color: rgb(255, 255, 255);
   font-size: 70px;
 }
+.card-emphasis-home {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .card-emphasis-home img {
   width: 320px;
   height: 100%;
-  margin: 50px;
+  margin: 20px 10px;
   border-radius: 50px;
 }
 .container-emphasis-price {
+  margin: 5px;
   text-align: center;
 }
 .card-emphasis-price {
