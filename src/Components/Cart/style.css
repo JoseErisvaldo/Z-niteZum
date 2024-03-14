@@ -69,3 +69,24 @@
 .cart-status {
   text-align: center;
 }
+
+@media (max-width: 545px) {
+  .card-cart {
+    width: 100%;
+  }
+  .dados-cart {
+    padding: 0 20px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .dados-cart div {
+    width: 100%;
+  }
+  .card-qtd-cart {
+    display: flex;
+    align-items: center;
+  }
+}
