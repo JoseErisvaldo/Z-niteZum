@@ -12,13 +12,10 @@ import { useState } from 'react';
 export default function Header () {
   const [cart, setCart] = useState(false);
 
-  // Função para abrir/fechar o carrinho
   function handleCart () {
-    // Alternar o estado do carrinho
     setCart(!cart);
   }
 
-  // Função para fechar o carrinho
   function handleCloseCart() {
     setCart(false);
   }
@@ -34,11 +31,9 @@ export default function Header () {
           <CiSearch/>
         </div>
       </div>
-      {/* Passando a função handleCloseCart para CompoCart */}
       <CompoCart list={cart} onClose={handleCloseCart} />
       <div>
         <ul className='dados-account'>
-          {/* Ao clicar no ícone do carrinho, abrir/fechar o carrinho */}
           <li onClick={handleCart}><FiShoppingCart/></li>
           <li><IoIosNotificationsOutline/></li>
           <li><VscAccount/></li>
