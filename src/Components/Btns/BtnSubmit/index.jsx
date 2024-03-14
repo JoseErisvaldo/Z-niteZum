@@ -1,8 +1,8 @@
 import './style.css'
-export default function BtnSubmit ({submit}) {
+export default function BtnSubmit ({submit,onClick}) {
   return(
     <div>
-      <button className="btn-submit" >{submit}</button>
+      <button onClick={onClick} className="btn-submit" >{submit}</button>
     </div>
   )
 }
