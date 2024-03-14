@@ -11,6 +11,7 @@ export default function CompoDetailesItem() {
   const { id } = useParams()
   const [detailsItemBd, setDetailsItemBd] = useState([])
   const [thumbnail, setThumbnail] = useState([])
+  const [cart, setCart] = useState()
 
   async function fetchData() {
     try {
@@ -29,6 +30,37 @@ export default function CompoDetailesItem() {
   useEffect(() => {
     fetchData();
   }, [id]); 
+
+ function handleAddCart(e, productData) {
+  let currentCart = JSON.parse(localStorage.getItem('@cartZeniteZum'));
+
+  if (!Array.isArray(currentCart)) {
+    currentCart = [];
+  }
+
+  let found = false;
+  for (let i = 0; i < currentCart.length; i++) {
+    console.log(currentCart[i].id)
+    if (currentCart[i].id === productData.id) {
+      alert('Item ja consta no carrinho !')
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    productData.quantity = productData.quantity || 1;
+    console.log(currentCart)
+    currentCart.push(productData);
+      alert('Item adicionado ao carrinho !!')
+  }
+
+  localStorage.setItem('@cartZeniteZum', JSON.stringify(currentCart));
+
+}
+
+
+
   return (
     <div>
       <div className="container-details-item">
@@ -60,6 +92,7 @@ export default function CompoDetailesItem() {
           </p>
           <p>
               <BtnSubmit submit={'Comprar'}/>
+              <BtnSubmit onClick={(e) => handleAddCart(e, { id:detailsItemBd.id, img: detailsItemBd.thumbnail, title: detailsItemBd.title,  original_price: detailsItemBd.original_price, price: detailsItemBd.price })} submit={'Adicionar ao Carrinho'}/>
           </p>
         </div>
       </div>
